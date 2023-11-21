@@ -1,11 +1,8 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
-public class 기억이안나 {
+public class 등수구하기 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -18,16 +15,16 @@ public class 기억이안나 {
     }
 
     private static String solution(Integer input, List<Integer> inputs) {
-        // 100 90 90 89
+        List<Integer> copy = new ArrayList<>(inputs);
         HashMap<Integer, Integer> map = new HashMap<>();
-        List<Integer> sorted = inputs.stream().sorted().collect(Collectors.toList());
-        for (int i = input - 1; i >= 0; i--) {
-            Integer num = sorted.get(i);
-            int finalI = i;
-            map.computeIfAbsent(num, (key) -> (input - finalI));
+        inputs.sort(Collections.reverseOrder());
+        for (int i = 0; i < input; i++) {
+            Integer num = inputs.get(i);
+            int finalI = i+1;
+            map.putIfAbsent(num, (finalI));
         }
         StringBuilder sb = new StringBuilder();
-        for (Integer integer : inputs) {
+        for (Integer integer : copy) {
             sb.append(map.get(integer)).append(" ");
         }
         return sb.toString();

@@ -1,3 +1,5 @@
+-- order은 최종으로 됨 case 절 사용 가능
+
 SELECT BOARD_ID, WRITER_ID, TITLE, PRICE,
        case
            when STATUS="SALE"

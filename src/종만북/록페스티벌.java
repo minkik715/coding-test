@@ -39,13 +39,13 @@ public class 록페스티벌 {
     }
 
     //오답 ... break의 문제 애초에 잘못됨
-    /*private static Float solution(int[] costs, int team) {
-        float min = Float.MAX_VALUE;
+    /*private static Double solution(int[] costs, int team) {
+        Double min = Double.MAX_VALUE;
 
-        for (int start = 0; start < costs.length - 1; start++) {
-            float sum = 0;
+        for (int start = 0; start < costs.length; start++) {
+            double sum = 0;
             int cnt = 0;
-            float avg = Float.MAX_VALUE;
+            double avg = Double.MAX_VALUE;
             for (int target = start; target < costs.length; target++) {
                 if (cnt++ < team || avg > (sum + costs[target]) / cnt) {
                     sum += costs[target];

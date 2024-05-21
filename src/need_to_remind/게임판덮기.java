@@ -1,4 +1,4 @@
-package 종만북;
+package need_to_remind;
 
 import java.io.*;
 

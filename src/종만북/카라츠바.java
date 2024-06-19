@@ -65,7 +65,7 @@ public class 카라츠바 {
         int mid = an / 2;
 
         if (an == 0 || bn == 0) {
-            return new int[];
+            return new int[100];
         }
 
         int[] a0 = new int[mid + 1];
@@ -87,7 +87,7 @@ public class 카라츠바 {
         addTo(result, z0, 0);
         addTo(result, z1, mid);
         addTo(result, z2, mid * 2);
-        return result
+        return result;
     }
 
     private int[] addTo(int[] a, int[] b, int k) {

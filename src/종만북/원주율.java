@@ -1,4 +1,3 @@
-/*
 package 종만북;
 
 public class 원주율 {
@@ -40,11 +39,10 @@ public class 원주율 {
         return 10;
     }
 
-    int memorize(int begin){
+/*    int memorize(int begin){
         if(begin == n.length()){
             return 0;
         }
 
-    }
+    }*/
 }
-*/

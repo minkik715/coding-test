@@ -1,0 +1,39 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+import java.io.*;
+class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        String[] input1= br.readLine().split(" ");
+        int x1 = Integer.parseInt(input1[0]);
+        int y1 = Integer.parseInt(input1[1]);
+        int x2 = Integer.parseInt(input1[2]);
+        int y2 = Integer.parseInt(input1[3]);
+        String[] input2 = br.readLine().split(" ");
+        int x3 = Integer.parseInt(input2[0]);
+        int y3 = Integer.parseInt(input2[1]);
+        int x4 = Integer.parseInt(input2[2]);
+        int y4 = Integer.parseInt(input2[3]);
+
+        long check1= ccw(x3, y3, x1, y1, x2, y2 ) * ccw(x4, y4, x1, y1, x2, y2);
+        long check2 = ccw(x1, y1, x3, y3, x4,y4) * ccw(x2, y2, x3, y3, x4, y4);
+
+        if(check1 <0 && check2 <0){
+            bw.write("1");
+        }else{
+            bw.write("0");
+        }
+
+        bw.flush();
+        bw.close();
+        br.close();
+    }
+
+
+
+    static long ccw(long x1, long y1, long x2, long y2, long x3, long y3){
+        return (x2-x1)*(y3-y1)-(x3-x1)* (y2-y1);
+    }
+}
